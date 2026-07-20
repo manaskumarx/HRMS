@@ -1,172 +1,87 @@
-/* ======================================
-   MODERN TEAMS HRMS LANDING PAGE
-   PREMIUM DESIGN
-====================================== */
-
-
-*{
-    box-sizing:border-box;
-}
-
-
-/* ======================
-   BODY
-====================== */
-
-
 body{
 
-    margin:0;
+margin:0;
 
-    font-family:
-    'Inter',
-    Arial,
-    sans-serif;
+font-family:'Inter',Arial,sans-serif;
 
-    background:
-    linear-gradient(
-        135deg,
-        #f8fafc,
-        #eef2ff
-    );
+background:#050505;
 
-    color:#111827;
+color:white;
 
 }
 
 
 
-/* ======================
-   HEADER
-====================== */
+/* HEADER */
 
 
 .landing-header{
 
+height:90px;
 
-    width:100%;
+display:flex;
 
-    display:flex;
+justify-content:space-between;
 
-    justify-content:space-between;
+align-items:center;
 
-    align-items:center;
+padding:0 8%;
 
+background:#050505;
 
-    padding:20px 8%;
-
-
-    background:
-
-    rgba(255,255,255,0.85);
-
-
-    backdrop-filter:blur(15px);
-
-
-    position:sticky;
-
-    top:0;
-
-    z-index:100;
-
-
-    border-bottom:
-
-    1px solid rgba(0,0,0,0.08);
+border-bottom:1px solid rgba(212,175,55,.3);
 
 }
-
-
 
 
 .logo{
 
+display:flex;
 
-    display:flex;
+align-items:center;
 
-    align-items:center;
-
-    gap:14px;
+gap:15px;
 
 }
-
-
 
 
 .logo img{
 
+height:55px;
 
-    width:55px;
+width:55px;
 
-    height:55px;
-
-
-    border-radius:14px;
-
-
-    object-fit:cover;
-
-
-    box-shadow:
-
-    0 10px 25px rgba(0,0,0,0.15);
+border-radius:12px;
 
 }
-
 
 
 .logo h2{
 
+font-size:26px;
 
-    font-size:22px;
+font-weight:800;
 
-    font-weight:800;
-
-    margin:0;
-
-    color:#111827;
+color:#D4AF37;
 
 }
 
 
 
 
-nav{
+.login-btn{
 
+text-decoration:none;
 
-    display:flex;
+color:#fff;
 
-    gap:35px;
+border:1px solid #D4AF37;
 
-    align-items:center;
+padding:12px 30px;
 
-}
+border-radius:30px;
 
-
-
-nav a{
-
-
-    text-decoration:none;
-
-    color:#374151;
-
-
-    font-weight:600;
-
-
-    transition:.3s;
-
-
-}
-
-
-
-nav a:hover{
-
-
-    color:#2563eb;
+font-weight:600;
 
 }
 
@@ -174,45 +89,145 @@ nav a:hover{
 
 
 
-/* ======================
-   HERO
-====================== */
-
+/* HERO */
 
 
 .hero{
 
 
-    min-height:90vh;
+min-height:85vh;
 
+display:flex;
 
-    display:flex;
+align-items:center;
 
+justify-content:space-between;
 
-    align-items:center;
+padding:70px 8%;
 
-
-    justify-content:space-between;
-
-
-    padding:
-
-    80px 8%;
-
-
-    gap:50px;
+gap:50px;
 
 
 }
-
 
 
 
 
 .hero-content{
 
+max-width:600px;
 
-    max-width:600px;
+}
+
+
+
+.tag{
+
+color:#D4AF37;
+
+letter-spacing:3px;
+
+font-size:13px;
+
+font-weight:700;
+
+}
+
+
+
+
+.hero h1{
+
+
+font-size:70px;
+
+line-height:1.1;
+
+font-weight:900;
+
+
+background:
+
+linear-gradient(
+90deg,
+#fff,
+#D4AF37
+);
+
+
+-webkit-background-clip:text;
+
+background-clip:text;
+
+color:transparent;
+
+
+}
+
+
+
+.hero p{
+
+font-size:20px;
+
+line-height:1.7;
+
+color:#cfcfcf;
+
+}
+
+
+
+
+.hero button{
+
+
+margin-top:30px;
+
+
+padding:18px 45px;
+
+
+border:none;
+
+
+border-radius:12px;
+
+
+background:
+
+linear-gradient(
+135deg,
+#D4AF37,
+#8c6b10
+);
+
+
+color:black;
+
+
+font-size:18px;
+
+
+font-weight:800;
+
+
+cursor:pointer;
+
+
+box-shadow:
+
+0 20px 50px rgba(212,175,55,.35);
+
+
+}
+
+
+
+.hero button:hover{
+
+
+transform:translateY(-5px);
 
 
 }
@@ -221,255 +236,95 @@ nav a:hover{
 
 
 
-.hero-content h1{
-
-
-    font-size:
-
-    clamp(42px,5vw,70px);
-
-
-    line-height:1.1;
-
-
-    font-weight:900;
-
-
-    margin-bottom:25px;
-
-
-    background:
-
-    linear-gradient(
-
-    90deg,
-
-    #111827,
-
-    #2563eb
-
-    );
-
-
-
-    color:transparent;
-
-
-}
-
-
-
-
-.hero-content p{
-
-
-    font-size:20px;
-
-
-    line-height:1.7;
-
-
-    color:#4b5563;
-
-
-    margin-bottom:40px;
-
-
-}
-
-
-
-
-
-.hero-content button{
-
-
-    border:none;
-
-
-    padding:
-
-    16px 40px;
-
-
-    border-radius:14px;
-
-
-    font-size:18px;
-
-
-    font-weight:700;
-
-
-    color:white;
-
-
-    background:
-
-    linear-gradient(
-
-    135deg,
-
-    #2563eb,
-
-    #1d4ed8
-
-    );
-
-
-    cursor:pointer;
-
-
-    box-shadow:
-
-    0 15px 35px
-
-    rgba(37,99,235,.35);
-
-
-    transition:.3s;
-
-
-}
-
-
-
-
-.hero-content button:hover{
-
-
-    transform:translateY(-5px);
-
-
-    box-shadow:
-
-    0 20px 45px
-
-    rgba(37,99,235,.45);
-
-
-}
-
-
-
-
-
-
-
-/* ======================
-   HERO IMAGE
-====================== */
-
-
-.hero-image{
-
-
-    flex:1;
-
-
-    display:flex;
-
-    justify-content:center;
-
-
-}
-
+/* IMAGE */
 
 
 .hero-image img{
 
 
-    width:100%;
+width:650px;
 
 
-    max-width:650px;
+border-radius:25px;
 
 
-    border-radius:25px;
+border:1px solid rgba(212,175,55,.4);
 
 
-    box-shadow:
+box-shadow:
 
-
-    0 30px 70px
-
-    rgba(0,0,0,.18);
-
-
-    animation:
-
-    float 5s ease-in-out infinite;
+0 30px 80px rgba(0,0,0,.8);
 
 
 }
 
 
 
-@keyframes float{
-
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-
-    50%{
-
-        transform:translateY(-15px);
-
-    }
-
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-
-}
-
-
-
-
-
-
-
-/* ======================
-   FEATURES
-====================== */
+/* =========================
+FEATURE SECTION
+========================= */
 
 
 .features{
 
+padding:100px 8%;
 
-    padding:
-
-    80px 8%;
-
-
-    background:white;
-
+background:#050505;
 
 }
 
 
 
-.features h2{
+.section-title{
 
+text-align:center;
 
-    text-align:center;
+max-width:700px;
 
-
-    font-size:40px;
-
-
-    margin-bottom:50px;
-
+margin:auto;
 
 }
+
+
+
+.section-title span{
+
+color:#d4af37;
+
+font-size:14px;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+}
+
+
+
+.section-title h2{
+
+font-size:45px;
+
+margin:15px 0;
+
+color:white;
+
+font-weight:800;
+
+}
+
+
+
+.section-title p{
+
+color:#aaa;
+
+font-size:18px;
+
+}
+
+
+
 
 
 
@@ -477,15 +332,17 @@ nav a:hover{
 .feature-grid{
 
 
-    display:grid;
+margin-top:60px;
 
 
-    grid-template-columns:
-
-    repeat(4,1fr);
+display:grid;
 
 
-    gap:25px;
+grid-template-columns:
+repeat(4,1fr);
+
+
+gap:30px;
 
 
 }
@@ -493,33 +350,80 @@ nav a:hover{
 
 
 
+
+
+
 .feature-card{
 
 
-    padding:30px;
+background:
+
+linear-gradient(
+145deg,
+#111,
+#080808
+);
 
 
-    background:white;
+padding:35px 30px;
 
 
-    border-radius:22px;
+border-radius:25px;
 
 
-    border:
-
-    1px solid #e5e7eb;
+border:1px solid rgba(212,175,55,.25);
 
 
-    box-shadow:
+transition:.4s;
 
 
-    0 15px 40px
-
-    rgba(0,0,0,.06);
+position:relative;
 
 
-    transition:.3s;
+overflow:hidden;
 
+
+}
+
+
+
+
+
+.feature-card::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+top:0;
+
+left:0;
+
+
+width:100%;
+
+height:3px;
+
+
+background:#d4af37;
+
+
+transform:scaleX(0);
+
+
+transition:.4s;
+
+
+}
+
+
+
+.feature-card:hover::before{
+
+transform:scaleX(1);
 
 }
 
@@ -528,33 +432,66 @@ nav a:hover{
 .feature-card:hover{
 
 
-    transform:
-
-    translateY(-10px);
+transform:translateY(-12px);
 
 
-    border-color:#2563eb;
+box-shadow:
+
+0 25px 60px rgba(212,175,55,.15);
 
 
-    box-shadow:
-
-
-    0 25px 50px
-
-    rgba(37,99,235,.15);
+border-color:#d4af37;
 
 
 }
 
 
 
+
+
+.icon{
+
+
+width:60px;
+
+height:60px;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+font-size:30px;
+
+
+background:#111;
+
+
+border-radius:18px;
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
+
+
 .feature-card h3{
 
 
-    font-size:20px;
+color:white;
 
 
-    margin-bottom:15px;
+font-size:22px;
+
+
+margin-bottom:15px;
 
 
 }
@@ -564,10 +501,13 @@ nav a:hover{
 .feature-card p{
 
 
-    color:#6b7280;
+color:#aaa;
 
 
-    line-height:1.6;
+line-height:1.7;
+
+
+font-size:15px;
 
 
 }
@@ -577,30 +517,71 @@ nav a:hover{
 
 
 
-/* ======================
-   ABOUT
-====================== */
+
+
+
+/* =========================
+ABOUT
+========================= */
+
 
 
 .about{
 
 
-    padding:
-
-    80px 8%;
+padding:100px 8%;
 
 
-    text-align:center;
+background:white;
+
+
+text-align:center;
 
 
 }
+
+
+
+
+
+.about-box{
+
+
+max-width:800px;
+
+
+margin:auto;
+
+
+padding:60px;
+
+
+background:
+
+
+linear-gradient(
+135deg,
+#111,
+#000
+);
+
+
+border-radius:30px;
+
+
+}
+
+
 
 
 
 .about h2{
 
 
-    font-size:40px;
+color:white;
+
+
+font-size:40px;
 
 
 }
@@ -610,10 +591,65 @@ nav a:hover{
 .about p{
 
 
-    font-size:20px;
+color:#ccc;
 
 
-    color:#6b7280;
+font-size:18px;
+
+
+line-height:1.8;
+
+
+margin:25px 0;
+
+
+}
+
+
+
+
+.about button{
+
+
+padding:15px 40px;
+
+
+border:none;
+
+
+border-radius:30px;
+
+
+background:#d4af37;
+
+
+color:black;
+
+
+font-size:16px;
+
+
+font-weight:700;
+
+
+cursor:pointer;
+
+
+transition:.3s;
+
+
+}
+
+
+
+.about button:hover{
+
+
+transform:translateY(-5px);
+
+
+box-shadow:
+0 15px 35px rgba(212,175,55,.4);
 
 
 }
@@ -623,24 +659,31 @@ nav a:hover{
 
 
 
-/* ======================
-   FOOTER
-====================== */
+
+
+
+/* =========================
+FOOTER
+========================= */
 
 
 footer{
 
 
-    background:#111827;
+background:#000;
 
 
-    color:white;
+color:#888;
 
 
-    text-align:center;
+text-align:center;
 
 
-    padding:25px;
+padding:25px;
+
+
+border-top:
+1px solid #222;
 
 
 }
@@ -651,108 +694,45 @@ footer{
 
 
 
-
-/* ======================
-   RESPONSIVE
-====================== */
 
 
 @media(max-width:1000px){
 
 
-.hero{
-
-
-    flex-direction:column;
-
-
-    text-align:center;
-
-
-}
-
-
-
 .feature-grid{
 
-
-    grid-template-columns:
-
-    repeat(2,1fr);
-
+grid-template-columns:
+repeat(2,1fr);
 
 }
 
 
 }
+
 
 
 
 @media(max-width:600px){
 
 
-
-.landing-header{
-
-
-    flex-direction:column;
-
-    gap:20px;
-
-
-}
-
-
-
-nav{
-
-
-    gap:15px;
-
-
-}
-
-
-
-.hero{
-
-
-    padding:
-
-    50px 5%;
-
-
-}
-
-
-
-.hero-content h1{
-
-
-    font-size:40px;
-
-
-}
-
-
-
 .feature-grid{
 
-
-    grid-template-columns:1fr;
-
+grid-template-columns:
+1fr;
 
 }
 
 
+.section-title h2{
 
-.features h2,
+font-size:32px;
 
-.about h2{
+}
 
 
-    font-size:30px;
+.about-box{
 
+padding:35px 20px;
 
 }
 
