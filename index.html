@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-<link rel="stylesheet" href="css/variables.css">
 
-<link rel="stylesheet" href="css/base.css">
-
-<link rel="stylesheet" href="css/landing.css">
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +13,13 @@ Modern Teams - HR Management System
 </title>
 
 
+<link rel="stylesheet" href="css/variables.css">
+
+<link rel="stylesheet" href="css/base.css">
+
+<link rel="stylesheet" href="css/landing.css">
+
+
 </head>
 
 
@@ -26,16 +28,12 @@ Modern Teams - HR Management System
 
 
 
-
-
-
 <!-- ======================
-     HEADER
+HEADER
 ====================== -->
 
 
 <header class="landing-header">
-
 
 
 <div class="logo">
@@ -51,37 +49,15 @@ Modern Teams
 </h2>
 
 
-
 </div>
 
 
 
-
-
-<nav>
-
-
-<a href="#features">
-Features
-</a>
-
-
-
-<a href="#about">
-About
-</a>
-
-
-
-<a href="login.html">
+<a href="login.html" class="login-btn">
 
 Login
 
 </a>
-
-
-
-</nav>
 
 
 
@@ -93,28 +69,31 @@ Login
 
 
 
-
-
 <!-- ======================
-     HERO SECTION
+HERO SECTION
 ====================== -->
-
 
 
 <section class="hero">
 
 
 
-
-
 <div class="hero-content">
+
+
+<span class="tag">
+
+ENTERPRISE HR MANAGEMENT SYSTEM
+
+</span>
+
 
 
 
 <h1>
 
-Manage Your Workforce
-Smarter
+Build Smarter Teams.
+Manage Better.
 
 </h1>
 
@@ -123,9 +102,11 @@ Smarter
 
 <p>
 
-Modern Teams HRMS helps companies manage
-employees, attendance, leaves and productivity
-in one powerful platform.
+
+Modern Teams HRMS helps companies manage employees,
+attendance, leaves and productivity from one powerful
+digital platform.
+
 
 </p>
 
@@ -134,8 +115,8 @@ in one powerful platform.
 
 
 
-
 <a href="login.html">
+
 
 <button>
 
@@ -143,11 +124,17 @@ Get Started
 
 </button>
 
+
 </a>
 
 
 
+
+
 </div>
+
+
+
 
 
 
@@ -157,9 +144,9 @@ Get Started
 <div class="hero-image">
 
 
-<img 
-src="assets/images/hrms-dashboard.png"
-alt="HRMS Dashboard">
+<img
+
+src="assets/logo/mt-logo.jpeg">
 
 
 </div>
@@ -176,21 +163,28 @@ alt="HRMS Dashboard">
 
 
 
-
-
 <!-- ======================
-     FEATURES
+FEATURES
 ====================== -->
 
+<section class="features">
 
-<section id="features" class="features">
 
+<div class="section-title">
 
+<span>
+FEATURES
+</span>
 
 <h2>
-Powerful HR Management Features
+Powerful HR Management
 </h2>
 
+<p>
+Everything your company needs to manage employees efficiently.
+</p>
+
+</div>
 
 
 
@@ -199,22 +193,21 @@ Powerful HR Management Features
 
 
 
-
-
-
 <div class="feature-card">
+
+<div class="icon">
+👥
+</div>
 
 
 <h3>
-👥 Employee Management
+Employee Management
 </h3>
 
 
 <p>
-
-Manage employee profiles,
-departments and records.
-
+Create, manage and organize employee profiles,
+departments and company records easily.
 </p>
 
 
@@ -228,21 +221,24 @@ departments and records.
 
 <div class="feature-card">
 
+<div class="icon">
+🕒
+</div>
+
 
 <h3>
-🕒 Attendance Tracking
+Smart Attendance
 </h3>
 
 
 <p>
-
-Track check-in,
-check-out and working hours.
-
+Track employee check-in,
+check-out and working hours automatically.
 </p>
 
 
 </div>
+
 
 
 
@@ -252,21 +248,24 @@ check-out and working hours.
 
 <div class="feature-card">
 
+<div class="icon">
+📄
+</div>
+
 
 <h3>
-📄 Leave Management
+Leave Management
 </h3>
 
 
 <p>
-
-Apply and approve leaves
-with simple workflow.
-
+Simple leave requests,
+approval workflow and holiday management.
 </p>
 
 
 </div>
+
 
 
 
@@ -276,17 +275,19 @@ with simple workflow.
 
 <div class="feature-card">
 
+<div class="icon">
+📢
+</div>
+
 
 <h3>
-📢 Announcements
+Company Updates
 </h3>
 
 
 <p>
-
-Share company updates
-instantly.
-
+Share announcements and important
+information with your complete team.
 </p>
 
 
@@ -296,11 +297,7 @@ instantly.
 
 
 
-
-
 </div>
-
-
 
 
 </section>
@@ -312,29 +309,36 @@ instantly.
 
 
 
-
 <!-- ======================
-     ABOUT
+ABOUT
 ====================== -->
 
 
-<section id="about" class="about">
+<section class="about">
 
+
+<div class="about-box">
 
 
 <h2>
-About Modern Teams HRMS
+Modern Teams HRMS
 </h2>
 
 
-
 <p>
-
-A complete employee management solution
-designed for modern companies.
-
+A secure and professional employee management
+platform designed for modern organizations.
 </p>
 
+
+<a href="login.html">
+<button>
+Start Managing Now
+</button>
+</a>
+
+
+</div>
 
 
 </section>
@@ -343,37 +347,20 @@ designed for modern companies.
 
 
 
-
-
-
-
-<!-- ======================
-     FOOTER
-====================== -->
 
 
 <footer>
 
-
 <p>
-
-© 2026 Modern Teams.
-All Rights Reserved.
-
+© 2026 Modern Teams. All Rights Reserved.
 </p>
-
-
 
 </footer>
 
 
 
 
-
-
-
-
-
 </body>
+
 
 </html>
