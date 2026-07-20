@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/employee-leaves.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Modern Teams - My Leaves
+</title>
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+<div class="employee-layout">
+
+
+
+
+
+<!-- ======================
+     SIDEBAR
+====================== -->
+
+
+<aside class="sidebar">
+
+
+
+<div class="logo">
+
+
+<img src="assets/logo/mt-logo.jpeg" alt="Logo">
+
+
+<h2>
+Modern Teams
+</h2>
+
+
+</div>
+
+
+
+
+
+
+<nav class="menu">
+
+
+
+<a href="employee.html">
+🏠 Dashboard
+</a>
+
+
+
+
+
+<a href="employee-attendance.html">
+🕒 My Attendance
+</a>
+
+
+
+
+
+<a class="active" href="employee-leaves.html">
+📄 My Leaves
+</a>
+
+
+
+
+
+<a href="employee-announcements.html">
+📢 Announcements
+</a>
+
+
+
+
+
+<a href="employee-profile.html">
+⚙ Profile
+</a>
+
+
+
+
+
+<a href="login.html" onclick="logout()">
+🚪 Logout
+</a>
+
+
+
+
+</nav>
+
+
+
+</aside>
+
+
+
+
+
+
+
+
+
+<!-- ======================
+     MAIN CONTENT
+====================== -->
+
+
+<main class="main-content">
+
+
+
+
+
+<header class="topbar">
+
+
+<div>
+
+
+<h1>
+My Leaves
+</h1>
+
+
+<p>
+Apply and manage your leaves
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="employee-info">
+
+
+<div class="notification">
+
+🔔
+
+</div>
+
+
+
+<div class="avatar">
+
+E
+
+</div>
+
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<section class="leave-section">
+
+
+
+
+
+
+
+<!-- ======================
+     APPLY LEAVE
+====================== -->
+
+
+
+<div class="card form-card">
+
+
+
+<h2>
+Apply Leave
+</h2>
+
+
+
+
+
+
+
+<label>
+Leave Type
+</label>
+
+
+
+<select id="leaveType">
+
+
+<option value="">
+Select Leave Type
+</option>
+
+<option value="Casual Leave">Casual Leave</option>
+
+<option value="Sick Leave">Sick Leave</option>
+
+<option value="Emergency Leave">Emergency Leave</option>
+
+</select>
+
+
+
+
+
+
+
+
+
+<label>
+From Date
+</label>
+
+
+<input 
+type="date"
+id="fromDate">
+
+
+
+
+
+
+
+<label>
+To Date
+</label>
+
+
+<input
+type="date"
+id="toDate">
+
+
+
+
+
+
+
+<label>
+Reason
+</label>
+
+
+
+<textarea
+id="leaveReason"
+placeholder="Enter reason">
+</textarea>
+
+
+
+
+
+
+
+<button id="applyLeaveBtn">
+
+📄 Apply Leave
+
+</button>
+
+
+
+
+
+<p id="leaveMessage"></p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======================
+     LEAVE HISTORY
+====================== -->
+
+
+
+<div class="table-section">
+
+
+
+
+
+<div class="table-header">
+
+
+
+<h2>
+Leave History
+</h2>
+
+
+
+
+
+<select id="leaveHistoryFilter">
+<option value="All">
+All
+</option>
+
+<option value="Pending">
+Pending
+</option>
+
+<option value="Approved">
+Approved
+</option>
+
+<option value="Rejected">
+Rejected
+</option>
+
+</select>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<table>
+
+
+
+<thead>
+
+
+<tr>
+
+
+<th>
+Leave Type
+</th>
+
+
+
+<th>
+From Date
+</th>
+
+
+
+<th>
+To Date
+</th>
+
+
+
+<th>
+Reason
+</th>
+
+
+
+<th>
+Status
+</th>
+
+
+
+</tr>
+
+
+</thead>
+
+
+
+
+
+
+<tbody id="leaveHistoryBody">
+
+
+
+<tr>
+
+
+<td colspan="5">
+
+No Leave Records
+
+</td>
+
+
+</tr>
+
+
+
+</tbody>
+
+
+
+
+
+</table>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/employee-leaves.js"></script>
+
+
+
+
+</body>
+
+</html>

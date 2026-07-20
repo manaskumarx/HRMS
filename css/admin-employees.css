@@ -1,0 +1,419 @@
+/* =====================================
+   MODERN TEAMS HRMS
+   ADMIN EMPLOYEES CSS
+   Theme: Black White Gold
+===================================== */
+
+
+
+/* =====================
+   PAGE CONTENT
+===================== */
+
+
+.content{
+
+
+display:flex;
+
+flex-direction:column;
+
+gap:30px;
+
+
+}
+
+
+
+
+
+
+
+/* =====================
+   ADD EMPLOYEE FORM
+===================== */
+
+
+.form-card{
+
+
+background:white;
+
+padding:30px;
+
+border-radius:22px;
+
+
+box-shadow:var(--shadow-sm);
+
+
+}
+
+
+
+.form-card h2{
+
+
+font-size:22px;
+
+margin-bottom:20px;
+
+
+}
+
+
+
+
+
+
+.form-card input,
+.form-card select{
+
+
+width:100%;
+
+padding:14px 16px;
+
+
+border:1px solid #ddd;
+
+
+border-radius:12px;
+
+
+font-size:15px;
+
+
+outline:none;
+
+
+transition:.3s;
+
+
+}
+
+
+
+
+
+.form-card input:focus,
+.form-card select:focus{
+
+
+border-color:var(--gold);
+
+
+box-shadow:0 0 0 3px rgba(212,175,55,.15);
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+   ADD BUTTON
+===================== */
+
+
+#addEmployeeBtn{
+
+
+margin-top:10px;
+
+width:220px;
+
+
+}
+
+
+
+
+
+
+
+#employeeMessage{
+
+
+margin-top:15px;
+
+font-weight:600;
+
+
+color:#166534;
+
+
+}
+
+
+
+
+
+
+
+/* =====================
+   SEARCH BOX
+===================== */
+
+
+#searchEmployee{
+
+
+max-width:400px;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+   TABLE CARD
+===================== */
+
+
+.table-card{
+
+
+background:white;
+
+padding:30px;
+
+
+border-radius:22px;
+
+
+box-shadow:var(--shadow-sm);
+
+
+overflow-x:auto;
+
+
+}
+
+
+
+.table-card h2{
+
+
+margin-bottom:20px;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+   EMPLOYEE TABLE
+===================== */
+
+
+table{
+
+
+width:100%;
+
+border-collapse:collapse;
+
+
+}
+
+
+
+
+thead{
+
+
+background:#111;
+
+
+}
+
+
+
+
+thead th{
+
+
+padding:16px;
+
+color:white;
+
+font-size:14px;
+
+text-align:left;
+
+
+}
+
+
+
+
+tbody td{
+
+
+padding:15px;
+
+border-bottom:1px solid #eee;
+
+font-size:14px;
+
+
+}
+
+
+
+
+tbody tr{
+
+
+transition:.2s;
+
+
+}
+
+
+
+tbody tr:hover{
+
+
+background:#faf7ed;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+   ROLE BADGE
+===================== */
+
+
+td:nth-child(5){
+
+
+font-weight:600;
+
+
+}
+
+
+
+
+/* =====================
+   DELETE BUTTON
+===================== */
+
+
+.delete-btn{
+
+
+background:#111;
+
+color:white;
+
+
+padding:9px 18px;
+
+
+border-radius:10px;
+
+
+border:none;
+
+
+cursor:pointer;
+
+
+font-weight:600;
+
+
+}
+
+
+
+.delete-btn:hover{
+
+
+background:#d4af37;
+
+color:#111;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+
+@media(max-width:700px){
+
+
+
+.form-card{
+
+
+padding:20px;
+
+
+}
+
+
+
+#addEmployeeBtn{
+
+
+width:100%;
+
+
+}
+
+
+
+
+.table-card{
+
+
+padding:20px;
+
+
+}
+
+
+
+table{
+
+
+min-width:700px;
+
+
+}
+
+
+}

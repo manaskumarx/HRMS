@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/employee-announcements.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Modern Teams - Announcements
+</title>
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+<div class="app-layout">
+
+
+
+
+
+<!-- ======================
+     SIDEBAR
+====================== -->
+
+
+<aside class="sidebar">
+
+
+
+<div class="logo">
+
+
+<img src="assets/logo/mt-logo.jpeg" alt="Logo">
+
+
+<h2>
+Modern Teams
+</h2>
+
+
+</div>
+
+
+
+
+
+
+
+<nav class="menu">
+
+
+
+<a href="employee.html">
+🏠 Dashboard
+</a>
+
+
+
+
+
+<a href="employee-attendance.html">
+🕒 My Attendance
+</a>
+
+
+
+
+
+<a href="employee-leaves.html">
+📄 My Leaves
+</a>
+
+
+
+
+
+<a class="active" href="employee-announcements.html">
+📢 Announcements
+</a>
+
+
+
+
+
+<a href="employee-profile.html">
+⚙ Profile
+</a>
+
+
+
+
+
+<a href="login.html" onclick="logout()">
+🚪 Logout
+</a>
+
+
+
+
+</nav>
+
+
+
+</aside>
+
+
+
+
+
+
+
+
+
+<!-- ======================
+     MAIN CONTENT
+====================== -->
+
+
+<main class="main-content">
+
+
+
+
+
+<header class="topbar">
+
+
+<div>
+
+
+<h1>
+Company Announcements
+</h1>
+
+
+<p>
+Latest updates from Modern Teams
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="employee-info">
+
+
+<div class="notification">
+
+🔔
+
+</div>
+
+
+
+
+<div class="avatar">
+
+E
+
+</div>
+
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<section class="announcement-section">
+
+
+
+
+
+
+
+<!-- FILTER -->
+
+
+<div class="card filter-card">
+
+
+
+<h2>
+Announcements
+</h2>
+
+
+
+
+
+<select id="priorityFilter">
+
+
+<option>
+All
+</option>
+
+
+<option>
+High
+</option>
+
+
+<option>
+Medium
+</option>
+
+
+<option>
+Low
+</option>
+
+
+
+</select>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ANNOUNCEMENT LIST -->
+
+
+
+<div 
+class="announcement-container"
+id="announcementContainer">
+
+
+
+
+
+
+
+<!-- Dynamic Data Here -->
+
+
+<div class="announcement-card">
+
+
+
+<h3>
+No Announcements
+</h3>
+
+
+
+<p>
+Company announcements will appear here.
+</p>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script src="js/supabase.js"></script>
+
+
+<script src="js/auth.js"></script>
+
+
+<script src="js/employee-announcements.js"></script>
+
+
+
+</body>
+
+</html>

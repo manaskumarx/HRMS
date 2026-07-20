@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/admin-announcements.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Modern Teams - Announcements
+</title>
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+<div class="app-layout">
+
+
+
+
+
+<!-- ======================
+     SIDEBAR
+====================== -->
+
+
+<aside class="sidebar">
+
+
+
+<div class="logo">
+
+
+<img src="assets/logo/mt-logo.jpeg" alt="Logo">
+
+
+<h2>
+Modern Teams
+</h2>
+
+
+</div>
+
+
+
+
+
+<nav class="menu">
+
+
+<a href="admin.html">
+🏠 Dashboard
+</a>
+
+
+
+
+<a href="admin-employees.html">
+👥 Employees
+</a>
+
+
+
+
+
+<a href="admin-attendance.html">
+🕒 Attendance
+</a>
+
+
+
+
+
+<a href="admin-leaves.html">
+📄 Leaves
+</a>
+
+
+
+
+
+<a class="active" href="admin-announcements.html">
+📢 Announcements
+</a>
+
+
+
+
+
+<a href="admin-profile.html">
+⚙ Profile
+</a>
+
+
+
+
+
+<a href="login.html" onclick="logout()">
+🚪 Logout
+</a>
+
+
+
+</nav>
+
+
+</aside>
+
+
+
+
+
+
+
+
+
+<!-- ======================
+     MAIN CONTENT
+====================== -->
+
+
+<main class="main-content">
+
+
+
+
+
+<header class="topbar">
+
+
+<div>
+
+
+<h1>
+Announcements
+</h1>
+
+
+<p>
+Create and manage company announcements
+</p>
+
+
+</div>
+
+
+
+
+<div class="admin-info">
+
+
+<div class="notification">
+🔔
+</div>
+
+
+
+<div class="avatar">
+MT
+</div>
+
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<section class="content announcement-section">
+
+
+
+
+
+
+
+
+<!-- ======================
+ CREATE ANNOUNCEMENT
+====================== -->
+
+<div class="card form-card">
+
+
+
+<h2>
+Create Announcement
+</h2>
+
+
+
+
+<label>
+Announcement Title
+</label>
+
+
+<input 
+type="text"
+id="announcementTitle"
+placeholder="Enter title">
+
+
+
+
+
+
+
+<label>
+Description
+</label>
+
+
+<textarea 
+id="announcementDescription"
+placeholder="Write announcement">
+</textarea>
+
+
+
+
+
+
+
+<label>
+Priority
+</label>
+
+
+<select id="announcementPriority">
+
+
+<option>
+Low
+</option>
+
+
+<option>
+Medium
+</option>
+
+
+<option>
+High
+</option>
+
+
+</select>
+
+
+
+
+
+
+
+
+<label>
+Upload Image
+</label>
+
+
+<input 
+type="file"
+id="announcementImage"
+accept="image/*">
+
+
+
+
+
+<button 
+id="createAnnouncementBtn"
+class="btn btn-primary">
+
+📢 Publish Announcement
+
+</button>
+
+
+
+
+
+<p id="announcementMessage"></p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======================
+ ANNOUNCEMENT LIST
+====================== -->
+
+
+
+<div class="card announcement-list">
+
+
+<h2>
+All Announcements
+</h2>
+
+
+
+
+
+<div id="announcementContainer">
+
+
+
+
+
+<div class="announcement-card">
+
+
+
+<h3>
+No Announcements Found
+</h3>
+
+
+
+<p>
+Announcements will appear here.
+</p>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script src="js/supabase.js"></script>
+
+
+<script src="js/auth.js"></script>
+
+
+<script src="js/admin-announcements.js"></script>
+
+
+
+
+</body>
+
+</html>

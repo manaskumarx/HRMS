@@ -1,0 +1,462 @@
+/* ==================================
+   EMPLOYEE PROFILE PAGE
+================================== */
+
+
+.profile-section{
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+
+
+
+
+
+/* ================================
+   PROFILE CARD
+================================ */
+
+
+.profile-card{
+
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+
+}
+
+
+
+
+.profile-image{
+
+
+    width:120px;
+
+    height:120px;
+
+    margin:auto;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.profile-image img{
+
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid #2563eb;
+
+
+}
+
+
+
+.profile-card h2{
+
+
+    font-size:25px;
+
+    margin-bottom:8px;
+
+    color:#111827;
+
+
+}
+
+
+
+.profile-card p{
+
+
+    color:#64748b;
+
+    margin:5px;
+
+}
+
+
+
+
+
+
+/* ================================
+   PROFILE FORM
+================================ */
+
+
+
+.profile-form{
+
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+
+}
+
+
+
+
+.profile-form h2{
+
+
+    margin-bottom:25px;
+
+    color:#111827;
+
+
+}
+
+
+
+
+.profile-form label{
+
+
+    display:block;
+
+    font-weight:600;
+
+    color:#374151;
+
+    margin-bottom:8px;
+
+
+}
+
+
+
+
+.profile-form input,
+.profile-form textarea{
+
+
+    width:100%;
+
+    padding:13px 15px;
+
+    margin-bottom:18px;
+
+    border-radius:10px;
+
+    border:1px solid #d1d5db;
+
+    font-size:15px;
+
+    outline:none;
+
+
+}
+
+
+
+.profile-form textarea{
+
+
+    height:110px;
+
+    resize:none;
+
+
+}
+
+
+
+.profile-form input:focus,
+.profile-form textarea:focus{
+
+
+    border-color:#2563eb;
+
+
+}
+
+
+
+
+
+
+/* UPDATE BUTTON */
+
+
+#updateProfileBtn{
+
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+
+}
+
+
+
+#updateProfileBtn:hover{
+
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+
+
+
+
+/* ================================
+ COMPANY DETAILS
+================================ */
+
+
+.company-card{
+
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+
+}
+
+
+
+
+.company-card h2{
+
+
+    margin-bottom:20px;
+
+    color:#111827;
+
+
+}
+
+
+
+
+.details{
+
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+
+}
+
+
+
+.details p{
+
+
+    background:#f8fafc;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    color:#475569;
+
+    font-weight:500;
+
+
+}
+
+
+
+.details span{
+
+
+    color:#111827;
+
+    font-weight:700;
+
+
+}
+
+
+
+
+
+
+
+/* ================================
+ PASSWORD CARD
+================================ */
+
+
+.password-card{
+
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+
+}
+
+
+
+.password-card h2{
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.password-card input{
+
+
+    width:100%;
+
+    padding:13px 15px;
+
+    border-radius:10px;
+
+    border:1px solid #d1d5db;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+#changePasswordBtn{
+
+
+    background:#111827;
+
+    color:white;
+
+    padding:13px 25px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+
+}
+
+
+
+#changePasswordBtn:hover{
+
+
+    background:#000;
+
+}
+
+
+
+
+
+
+
+/* ================================
+ RESPONSIVE
+================================ */
+
+
+@media(max-width:768px){
+
+
+.profile-section{
+
+padding:15px;
+
+}
+
+
+
+.profile-card,
+.profile-form,
+.company-card,
+.password-card{
+
+
+padding:20px;
+
+
+}
+
+
+
+.details{
+
+
+grid-template-columns:1fr;
+
+
+}
+
+
+}

@@ -1,0 +1,399 @@
+/* =================================
+   EMPLOYEE LEAVES PAGE
+================================= */
+
+
+.leave-section{
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+
+
+
+/* ================================
+   APPLY LEAVE CARD
+================================ */
+
+
+.form-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+}
+
+
+
+.form-card h2{
+
+    margin-bottom:25px;
+
+    font-size:24px;
+
+    color:#111827;
+
+}
+
+
+
+
+
+.form-card label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+
+
+
+
+.form-card input,
+.form-card select,
+.form-card textarea{
+
+
+    width:100%;
+
+    padding:13px 15px;
+
+    margin-bottom:18px;
+
+    border-radius:10px;
+
+    border:1px solid #d1d5db;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+
+
+.form-card textarea{
+
+    height:120px;
+
+    resize:none;
+
+}
+
+
+
+.form-card input:focus,
+.form-card select:focus,
+.form-card textarea:focus{
+
+
+    border-color:#2563eb;
+
+}
+
+
+
+
+
+/* APPLY BUTTON */
+
+
+#applyLeaveBtn{
+
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+
+}
+
+
+
+#applyLeaveBtn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+
+
+
+/* ================================
+   LEAVE HISTORY
+================================ */
+
+
+.table-section{
+
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+}
+
+
+
+
+.table-header{
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.table-header h2{
+
+    margin:0;
+
+    font-size:22px;
+
+}
+
+
+
+
+
+.table-header select{
+
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    outline:none;
+
+}
+
+
+
+
+
+/* ================================
+   TABLE
+================================ */
+
+
+
+table{
+
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+
+
+
+thead{
+
+
+    background:#f8fafc;
+
+}
+
+
+
+th{
+
+
+    padding:15px;
+
+    text-align:left;
+
+    font-size:14px;
+
+    color:#475569;
+
+
+}
+
+
+
+td{
+
+
+    padding:15px;
+
+    border-bottom:1px solid #e5e7eb;
+
+    color:#334155;
+
+
+}
+
+
+
+tbody tr:hover{
+
+
+    background:#f8fafc;
+
+}
+
+
+
+
+
+
+
+/* STATUS STYLE */
+
+.status-pending{
+
+
+    background:#fef3c7;
+
+    color:#92400e;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+
+
+.status-approved{
+
+
+    background:#dcfce7;
+
+    color:#166534;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+
+
+.status-rejected{
+
+
+    background:#fee2e2;
+
+    color:#991b1b;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+
+
+
+
+
+
+/* ================================
+ RESPONSIVE
+================================ */
+
+
+@media(max-width:768px){
+
+
+.leave-section{
+
+padding:15px;
+
+}
+
+
+
+.form-card,
+.table-section{
+
+padding:20px;
+
+}
+
+
+
+.table-header{
+
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:15px;
+
+
+}
+
+
+
+table{
+
+min-width:700px;
+
+}
+
+
+
+}

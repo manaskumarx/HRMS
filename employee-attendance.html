@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>My Attendance - Modern Teams</title>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/employee-attendance.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app-layout">
+
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+
+<div class="logo">
+
+
+<img src="assets/logo/mt-logo.jpeg" alt="Logo">
+
+
+<h2>
+Modern Teams
+</h2>
+
+
+</div>
+
+
+
+
+
+<nav class="menu">
+
+
+<a href="employee.html">
+
+🏠 Dashboard
+
+</a>
+
+
+<a class="active" href="employee-attendance.html">
+
+🕒 My Attendance
+
+</a>
+
+
+<a href="employee-leaves.html">
+
+📄 My Leaves
+
+</a>
+
+
+<a href="employee-announcements.html">
+
+📢 Announcements
+
+</a>
+
+
+<a href="employee-profile.html">
+
+⚙ Profile
+
+</a>
+
+
+
+<a href="login.html" onclick="logout()">
+🚪 Logout
+</a>
+
+
+</nav>
+
+
+
+</aside>
+
+
+
+
+
+
+
+
+
+<!-- MAIN -->
+
+
+<main class="main-content">
+
+
+
+<header class="topbar">
+
+
+<div>
+
+<h2>
+My Attendance
+</h2>
+
+
+<p>
+Track your daily attendance
+</p>
+
+
+</div>
+
+
+
+<div class="user-avatar">
+
+MT
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+<section class="content">
+
+
+
+
+
+
+
+<!-- TODAY CARD -->
+
+
+<div class="stats-grid">
+
+
+
+<div class="stat-card">
+
+
+<div class="stat-icon">
+
+📅
+
+</div>
+
+
+<div>
+
+
+<p>
+Today's Date
+</p>
+
+
+<h2 id="todayDate">
+
+--
+
+</h2>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card stat-card">
+
+
+<div class="stat-icon">
+
+🟢
+
+</div>
+
+
+<div>
+
+
+<p>
+Check In
+
+</p>
+
+
+<h2 id="checkInTime">
+
+--
+
+</h2>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card stat-card">
+
+
+<div class="stat-icon">
+
+🔴
+
+</div>
+
+
+<div>
+
+
+<p>
+Check Out
+
+</p>
+
+
+<h2 id="checkOutTime">
+
+--
+
+</h2>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="card stat-card">
+
+
+<div class="stat-icon">
+
+⏰
+
+</div>
+
+
+<div>
+
+
+<p>
+Working Hours
+
+</p>
+
+
+<h2 id="totalHours">
+
+--
+
+</h2>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- HISTORY -->
+
+
+<div class="table-card">
+
+
+
+<div class="table-header">
+
+
+<h2>
+Attendance History
+</h2>
+
+
+
+<input 
+id="attendanceSearch"
+placeholder="Search Date">
+
+
+</div>
+
+
+
+
+
+
+
+<div class="table-container">
+
+
+<table>
+
+
+<thead>
+
+
+<tr>
+
+
+<th>Date</th>
+
+<th>Check In</th>
+
+<th>Check Out</th>
+
+<th>Working Hours</th>
+
+<th>Status</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody id="myAttendanceTable">
+
+
+<tr>
+
+<td colspan="5">
+
+No Data
+
+</td>
+
+
+</tr>
+
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+</section>
+
+
+
+
+</main>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/employee-attendance.js"></script>
+
+
+<script>
+
+employeeGuard();
+
+</script>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,288 @@
+/* =====================================
+   MODERN TEAMS HRMS
+   BASE CSS
+===================================== */
+
+
+/* =====================
+   RESET
+===================== */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+
+body{
+
+font-family:var(--font);
+
+background:var(--background);
+
+color:var(--text-primary);
+
+min-height:100vh;
+
+}
+
+
+
+
+
+/* =====================
+   LINKS
+===================== */
+
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+
+
+
+
+/* =====================
+   HEADINGS
+===================== */
+
+
+h1,
+h2,
+h3,
+h4{
+
+font-weight:700;
+
+color:var(--text-primary);
+
+}
+
+
+
+h1{
+
+font-size:32px;
+
+}
+
+
+
+h2{
+
+font-size:24px;
+
+}
+
+
+
+h3{
+
+font-size:18px;
+
+}
+
+
+
+
+
+/* =====================
+   PARAGRAPH
+===================== */
+
+
+p{
+
+color:var(--text-secondary);
+
+line-height:1.6;
+
+}
+
+
+
+
+
+/* =====================
+   IMAGES
+===================== */
+
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+
+
+
+
+/* =====================
+   BUTTON RESET
+===================== */
+
+
+button{
+
+border:none;
+
+cursor:pointer;
+
+font-family:inherit;
+
+transition:var(--transition);
+
+}
+
+
+
+
+
+/* =====================
+   INPUT RESET
+===================== */
+
+
+input,
+select,
+textarea{
+
+
+width:100%;
+
+padding:14px 16px;
+
+border:1px solid var(--border);
+
+border-radius:var(--radius-sm);
+
+font-size:15px;
+
+outline:none;
+
+background:white;
+
+transition:var(--transition);
+
+
+}
+
+
+
+input:focus,
+select:focus,
+textarea:focus{
+
+
+border-color:var(--gold);
+
+box-shadow:
+0 0 0 3px rgba(212,175,55,0.15);
+
+
+}
+
+
+
+
+
+textarea{
+
+resize:none;
+
+min-height:120px;
+
+}
+
+
+
+
+
+/* =====================
+   TABLE RESET
+===================== */
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+th{
+
+text-align:left;
+
+font-weight:600;
+
+}
+
+
+
+td,
+th{
+
+padding:15px;
+
+border-bottom:1px solid var(--border);
+
+}
+
+
+
+
+
+/* =====================
+   SCROLLBAR
+===================== */
+
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+
+
+::-webkit-scrollbar-track{
+
+background:#f1f1f1;
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+background:var(--gold);
+
+border-radius:20px;
+
+}

@@ -1,0 +1,98 @@
+/* =====================================
+   MODERN TEAMS HRMS
+   GLOBAL VARIABLES
+   BLACK WHITE GOLD THEME
+===================================== */
+
+
+:root{
+
+
+/* PRIMARY COLORS */
+
+--black:#111111;
+
+--dark:#1a1a1a;
+
+--white:#ffffff;
+
+--gold:#d4af37;
+
+--gold-light:#f5d76e;
+
+
+
+/* BACKGROUND */
+
+--background:#f6f6f6;
+
+--card-bg:#ffffff;
+
+
+
+/* TEXT */
+
+--text-primary:#111111;
+
+--text-secondary:#666666;
+
+--text-light:#999999;
+
+
+
+/* BORDER */
+
+--border:#e5e5e5;
+
+
+
+/* STATUS COLORS */
+
+--success:#16a34a;
+
+--warning:#d97706;
+
+--danger:#dc2626;
+
+
+
+/* SHADOW */
+
+--shadow-sm:
+0 4px 15px rgba(0,0,0,0.08);
+
+
+--shadow-md:
+0 8px 30px rgba(0,0,0,0.12);
+
+
+--shadow-lg:
+0 15px 40px rgba(0,0,0,0.18);
+
+
+
+/* RADIUS */
+
+--radius-sm:10px;
+
+--radius-md:16px;
+
+--radius-lg:24px;
+
+
+
+/* TRANSITION */
+
+--transition:0.3s ease;
+
+
+
+/* FONT */
+
+--font:
+"Inter",
+Arial,
+sans-serif;
+
+
+}

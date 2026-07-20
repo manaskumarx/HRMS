@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Modern Teams - Employees</title>
+
+<link rel="stylesheet" href="css/variables.css">
+
+<link rel="stylesheet" href="css/base.css">
+
+<link rel="stylesheet" href="css/layout.css">
+
+<link rel="stylesheet" href="css/components.css">
+
+
+<link rel="stylesheet" href="css/admin-employees.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+
+
+<div class="app-layout">
+
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+
+<div class="logo">
+
+<img src="assets/logo/mt-logo.jpeg">
+
+<h2>
+Modern Teams
+</h2>
+
+</div>
+
+
+
+<nav class="menu">
+
+
+<a href="admin.html">
+🏠 Dashboard
+</a>
+
+
+<a class="active" href="admin-employees.html">
+👥 Employees
+</a>
+
+
+<a href="admin-attendance.html">
+🕒 Attendance
+</a>
+
+
+<a href="admin-leaves.html">
+📄 Leaves
+</a>
+
+
+<a href="admin-announcements.html">
+📢 Announcements
+</a>
+
+
+<a href="admin-profile.html">
+⚙ Profile
+</a>
+
+
+<a href="login.html" onclick="logout()">
+🚪 Logout
+</a>
+
+
+</nav>
+
+
+</aside>
+
+
+
+
+
+<!-- MAIN -->
+
+<main class="main-content">
+
+
+
+<header class="topbar">
+
+<div>
+
+<h1>
+Employees
+</h1>
+
+<p>
+Manage Company Employees
+</p>
+
+</div>
+
+
+</header>
+
+
+
+
+
+
+
+<section class="content page-section">
+
+
+
+<!-- ADD EMPLOYEE -->
+
+<div class="card form-card">
+
+
+<h2>
+Add Employee
+</h2>
+
+
+
+<input 
+id="fullName"
+placeholder="Full Name">
+
+
+
+<input 
+id="email"
+placeholder="Email">
+
+<input 
+type="password"
+id="password"
+placeholder="Password">
+
+
+<input 
+id="phone"
+placeholder="Phone Number">
+
+
+<input 
+id="department"
+placeholder="Department">
+
+
+
+<input 
+id="designation"
+placeholder="Designation">
+
+
+
+<select id="role">
+
+<option value="employee">
+Employee
+</option>
+
+<option value="admin">
+Admin
+</option>
+
+</select>
+
+
+<button 
+id="addEmployeeBtn"
+class="btn btn-primary">
+
+Add Employee
+
+</button>
+
+
+
+<p id="employeeMessage"></p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- SEARCH -->
+
+<div class="card form-card">
+
+
+<input 
+id="searchEmployee"
+placeholder="Search Employee">
+
+
+</div>
+
+
+
+
+
+
+
+<!-- TABLE -->
+
+<div class="card table-card">
+
+
+<h2>
+Employee List
+</h2>
+
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>
+Name
+</th>
+
+
+<th>
+Email
+</th>
+
+
+<th>
+Department
+</th>
+
+
+<th>
+Designation
+</th>
+
+
+<th>
+Role
+</th>
+
+
+<th>
+Action
+</th>
+
+
+</tr>
+
+</thead>
+
+
+
+<tbody id="employeeTable">
+
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+</main>
+
+
+</div>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/admin-employees.js"></script>
+
+
+<script>
+
+adminGuard();
+
+</script>
+
+
+
+</body>
+
+</html>

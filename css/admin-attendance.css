@@ -1,0 +1,464 @@
+/* =====================================
+   MODERN TEAMS HRMS
+   ADMIN ATTENDANCE CSS
+   Theme: Black White Gold
+===================================== */
+
+
+
+/* =====================
+   ATTENDANCE SECTION
+===================== */
+
+
+.attendance-section{
+
+
+display:flex;
+
+flex-direction:column;
+
+gap:30px;
+
+
+}
+
+
+
+
+
+/* =====================
+   FILTER CARD
+===================== */
+
+
+.filter-card{
+
+
+padding:30px;
+
+
+}
+
+
+
+.filter-card h2{
+
+
+font-size:22px;
+
+margin-bottom:25px;
+
+
+}
+
+
+
+
+
+
+
+/* =====================
+   FILTER GRID
+===================== */
+
+
+.filter-grid{
+
+
+display:grid;
+
+
+grid-template-columns:repeat(3,1fr);
+
+
+gap:25px;
+
+
+}
+
+
+
+
+
+.filter-grid div{
+
+
+display:flex;
+
+flex-direction:column;
+
+gap:8px;
+
+
+}
+
+
+
+
+
+
+
+.filter-grid label{
+
+
+font-size:14px;
+
+
+font-weight:600;
+
+
+color:#555;
+
+
+}
+
+
+
+
+
+.filter-grid input,
+.filter-grid select{
+
+
+padding:14px;
+
+
+border-radius:12px;
+
+
+border:1px solid #ddd;
+
+
+font-size:15px;
+
+
+outline:none;
+
+
+}
+
+
+
+
+
+.filter-grid input:focus,
+.filter-grid select:focus{
+
+
+border-color:var(--gold);
+
+
+box-shadow:
+0 0 0 3px rgba(212,175,55,.15);
+
+
+}
+
+
+
+
+
+
+
+/* =====================
+   TABLE SECTION
+===================== */
+
+
+.table-section{
+
+
+padding:30px;
+
+
+overflow-x:auto;
+
+
+}
+
+
+
+
+
+.table-section h2{
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
+
+
+
+/* =====================
+   ATTENDANCE TABLE
+===================== */
+
+
+.table-section table{
+
+
+width:100%;
+
+
+border-collapse:collapse;
+
+
+}
+
+
+
+
+
+.table-section thead{
+
+
+background:#111;
+
+
+}
+
+
+
+
+
+.table-section th{
+
+
+padding:16px;
+
+
+color:white;
+
+
+font-size:14px;
+
+
+text-align:left;
+
+
+}
+
+
+
+
+
+.table-section td{
+
+
+padding:15px;
+
+
+border-bottom:1px solid #eee;
+
+
+font-size:14px;
+
+
+}
+
+
+
+
+
+
+.table-section tbody tr{
+
+
+transition:.2s;
+
+
+}
+
+
+
+
+
+.table-section tbody tr:hover{
+
+
+background:#faf7ed;
+
+
+}
+
+
+
+
+
+
+
+/* =====================
+   STATUS STYLE
+===================== */
+
+
+.status-present{
+
+
+background:#dcfce7;
+
+
+color:#166534;
+
+
+padding:6px 14px;
+
+
+border-radius:20px;
+
+
+font-size:13px;
+
+
+font-weight:600;
+
+
+}
+
+
+
+.status-absent{
+
+
+background:#fee2e2;
+
+
+color:#991b1b;
+
+
+padding:6px 14px;
+
+
+border-radius:20px;
+
+
+font-size:13px;
+
+
+font-weight:600;
+
+
+}
+
+
+
+
+
+.status-late{
+
+
+background:#fef3c7;
+
+
+color:#92400e;
+
+
+padding:6px 14px;
+
+
+border-radius:20px;
+
+
+font-size:13px;
+
+
+font-weight:600;
+
+
+}
+
+
+
+
+
+
+
+/* =====================
+   EMPTY DATA
+===================== */
+
+
+.table-section td[colspan]{
+
+
+text-align:center;
+
+
+padding:40px;
+
+
+color:#777;
+
+
+}
+
+
+
+
+
+
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+
+@media(max-width:1000px){
+
+
+
+.filter-grid{
+
+
+grid-template-columns:1fr 1fr;
+
+
+}
+
+
+
+}
+
+
+
+
+@media(max-width:650px){
+
+
+
+.filter-grid{
+
+
+grid-template-columns:1fr;
+
+
+}
+
+
+
+.table-section{
+
+
+padding:20px;
+
+
+}
+
+
+
+.table-section table{
+
+
+min-width:750px;
+
+
+}
+
+
+
+}

@@ -1,0 +1,570 @@
+/* =====================================
+   MODERN TEAMS HRMS
+   LOGIN PAGE CSS
+===================================== */
+
+
+
+
+
+/* =====================
+   LOGIN WRAPPER
+===================== */
+
+
+.login-container{
+
+
+min-height:100vh;
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+background:
+
+
+linear-gradient(
+135deg,
+#111111,
+#2c2c2c
+);
+
+
+padding:30px;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+   LOGIN BRAND
+===================== */
+
+
+.login-brand{
+
+
+width:50%;
+
+
+color:white;
+
+
+text-align:center;
+
+
+padding:40px;
+
+
+}
+
+
+
+
+
+.login-brand img{
+
+
+width:100px;
+
+
+height:100px;
+
+
+border-radius:20px;
+
+
+margin:0 auto 25px;
+
+
+}
+
+
+
+
+
+.login-brand h1{
+
+
+font-size:42px;
+
+
+color:white;
+
+
+margin-bottom:10px;
+
+
+}
+
+
+
+
+
+.login-brand p{
+
+
+color:#ddd;
+
+
+font-size:18px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================
+   LOGIN BOX
+===================== */
+
+
+.login-box{
+
+
+background:white;
+
+
+width:420px;
+
+
+padding:40px;
+
+
+border-radius:25px;
+
+
+box-shadow:var(--shadow-lg);
+
+
+}
+
+
+
+
+
+.login-box h2{
+
+
+font-size:28px;
+
+
+margin-bottom:10px;
+
+
+}
+
+
+
+
+
+.login-box p{
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+   LABEL
+===================== */
+
+
+.login-box label{
+
+
+font-size:14px;
+
+
+font-weight:600;
+
+
+margin-bottom:8px;
+
+
+display:block;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+   INPUT
+===================== */
+
+
+.login-box input{
+
+
+padding:15px;
+
+
+border:1px solid var(--border);
+
+
+border-radius:12px;
+
+
+margin-bottom:20px;
+
+
+font-size:15px;
+
+
+}
+
+
+
+
+
+.login-box input:focus{
+
+
+border-color:var(--gold);
+
+
+box-shadow:0 0 0 3px rgba(201,162,39,.15);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================
+   LOGIN BUTTON
+===================== */
+
+
+
+
+.login-box button{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#ccaf0c;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+#loginBtn:hover{
+
+    background:#dcf310;
+
+}
+
+
+
+
+.login-box button:hover{
+
+
+background:var(--gold);
+
+
+color:black;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================
+   MESSAGE
+===================== */
+
+
+#loginMessage{
+
+
+text-align:center;
+
+
+margin-top:15px;
+
+
+font-size:14px;
+
+
+color:var(--danger);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================
+   OLD CLASS SUPPORT
+   (agar purana html hai)
+===================== */
+
+
+.login-wrapper{
+
+
+min-height:100vh;
+
+
+display:flex;
+
+
+background:#111;
+
+
+}
+
+
+
+.login-left{
+
+
+flex:1;
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+background:white;
+
+
+}
+
+
+
+.login-right{
+
+
+flex:1;
+
+
+background:
+
+
+linear-gradient(
+135deg,
+#111,
+#333
+);
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+color:white;
+
+
+}
+
+
+
+
+
+.overlay{
+
+
+text-align:center;
+
+
+padding:50px;
+
+
+}
+
+
+
+
+
+.overlay h2{
+
+
+font-size:35px;
+
+
+color:white;
+
+
+margin-bottom:15px;
+
+
+}
+
+
+
+
+
+.overlay p{
+
+
+color:#ddd;
+
+
+font-size:18px;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+
+@media(max-width:900px){
+
+
+
+.login-container{
+
+
+flex-direction:column;
+
+
+}
+
+
+
+.login-brand{
+
+
+width:100%;
+
+
+}
+
+
+
+
+
+.login-box{
+
+
+width:100%;
+
+
+max-width:420px;
+
+
+}
+
+
+
+
+.login-right{
+
+
+display:none;
+
+
+}
+
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+
+.login-box{
+
+
+padding:25px;
+
+
+}
+
+
+
+.login-brand h1{
+
+
+font-size:32px;
+
+
+}
+
+
+
+}

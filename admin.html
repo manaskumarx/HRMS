@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+     <link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+
+<link rel="stylesheet" href="css/admin-dashboard.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Modern Teams - Admin Dashboard</title>
+
+</head>
+
+
+<body>
+
+
+<!-- ======================
+     ADMIN LAYOUT
+====================== -->
+
+
+<div class="app-layout">
+
+
+
+<!-- ======================
+     SIDEBAR
+====================== -->
+
+
+<aside class="sidebar">
+
+
+<div class="logo">
+
+<img src="assets/logo/mt-logo.jpeg" alt="Modern Teams Logo">
+
+<h2>
+Modern Teams
+</h2>
+
+
+</div>
+
+
+
+<nav class="menu">
+
+
+<a href="admin.html">
+🏠 Dashboard
+</a>
+
+
+<a href="admin-employees.html">
+👥 Employees
+</a>
+
+
+<a href="admin-attendance.html">
+🕒 Attendance
+</a>
+
+
+<a href="admin-leaves.html">
+📄 Leaves
+</a>
+
+
+<a href="admin-announcements.html">
+📢 Announcements
+</a>
+
+
+<a href="admin-profile.html">
+⚙ Profile
+</a>
+
+
+
+<a href="login.html" onclick="logout()">
+🚪 Logout
+</a>
+
+
+</nav>
+
+
+</aside>
+
+
+
+
+
+
+<!-- ======================
+     MAIN SECTION
+====================== -->
+
+
+<main class="main-content">
+
+
+
+<!-- HEADER -->
+
+
+<header class="topbar">
+
+
+<div>
+
+<h1>
+Dashboard
+</h1>
+
+
+<p>
+Modern Teams HRMS
+</p>
+
+
+</div>
+
+
+
+<div class="admin-info">
+
+
+<div class="notification">
+
+🔔
+
+</div>
+
+
+<div class="avatar">
+
+MT
+
+</div>
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+<!-- ======================
+     DASHBOARD CONTENT
+====================== -->
+
+
+<section class="content admin-dashboard">
+
+
+
+<!-- WELCOME -->
+
+
+<div class="admin-welcome">
+
+
+<h2>
+Good Morning, Admin 👋
+</h2>
+
+
+<p>
+Welcome back to Modern Teams HR Management System
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- STATS -->
+
+
+<div class="stats-container">
+
+
+
+<div class="card stats-card">
+
+
+<h3>
+Total Employees
+</h3>
+
+
+<h1 id="totalEmployees">
+0
+</h1>
+
+
+</div>
+
+
+
+
+
+<div class="card stats-card">
+
+
+<h3>
+Present Today
+</h3>
+
+
+<h1 id="presentToday">
+0
+</h1>
+
+
+</div>
+
+
+
+
+
+
+<div class="card stats-card">
+
+
+<h3>
+Pending Leaves
+</h3>
+
+
+<h1 id="pendingLeaves">
+0
+</h1>
+
+
+</div>
+
+
+
+
+
+
+<div class="card stats-card">
+
+
+<h3>
+Departments
+</h3>
+
+
+<h1 id="totalDepartments">
+0
+</h1>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ANALYTICS -->
+
+
+<div class="dashboard-section">
+
+
+
+<div class="card chart-box">
+
+
+<h2>
+Attendance Overview
+</h2>
+
+
+<canvas id="attendanceChart"></canvas>
+
+
+</div>
+
+
+
+
+<div class="card activity-box">
+
+
+<h2>
+Recent Activity
+</h2>
+
+
+
+<div id="recentActivity">
+
+
+<p>
+No activity yet
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- QUICK ACTIONS -->
+
+
+<div class="card quick-box">
+
+
+<h2>
+Quick Actions
+</h2>
+
+
+
+<div class="quick-buttons">
+
+
+<button class="btn btn-primary">
+Add Employee
+</button>
+
+
+<button class="btn btn-primary">
+Create Announcement
+</button>
+
+
+<button class="btn btn-primary">
+Manage Leaves
+</button>
+
+
+<button class="btn btn-primary">
+View Reports
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/admin-dashboard.js"></script>
+
+
+<script>
+
+adminGuard();
+
+</script>
+</body>
+
+
+</html>

@@ -1,0 +1,540 @@
+/* =====================================
+   MODERN TEAMS HRMS
+   COMMON COMPONENTS CSS
+===================================== */
+
+
+/* =====================
+   COMMON CARD
+===================== */
+
+
+.card,
+.stats-card,
+.stats-card,
+.dashboard-section,
+.section-card,
+.form-card,
+.table-card,
+.table-section,
+.filter-card,
+.chart-box,
+.activity-box,
+.quick-box,
+.profile-card,
+.profile-form,
+.password-card,
+.announcement-list{
+
+
+background:white;
+
+border-radius:var(--radius-md);
+
+padding:25px;
+
+box-shadow:var(--shadow-sm);
+
+}
+
+
+
+
+
+/* =====================
+   CARD HOVER
+===================== */
+
+
+.card:hover,
+.stats-card:hover{
+
+
+transform:translateY(-3px);
+
+box-shadow:var(--shadow-md);
+
+
+}
+
+
+
+
+
+/* =====================
+   STATS SECTION
+===================== */
+
+
+.stats-container,
+.stats-grid{
+
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+
+}
+
+
+
+.stats-card h3,
+.card h3{
+
+
+font-size:16px;
+
+color:var(--text-secondary);
+
+margin-bottom:10px;
+
+
+}
+
+
+
+.stats-card h1,
+.card h1{
+
+
+font-size:32px;
+
+color:var(--black);
+
+
+}
+
+
+
+
+
+
+
+/* =====================
+   BUTTONS
+===================== */
+
+
+.btn,
+button{
+
+
+padding:13px 24px;
+
+border-radius:12px;
+
+font-weight:600;
+
+font-size:15px;
+
+
+}
+
+
+
+
+
+.btn-primary,
+button.primary,
+#addEmployeeBtn,
+#createAnnouncementBtn,
+#updateProfileBtn,
+#changePasswordBtn{
+
+
+background:var(--black);
+
+color:white;
+
+
+}
+
+
+
+
+
+.btn-primary:hover,
+button.primary:hover,
+#addEmployeeBtn:hover,
+#createAnnouncementBtn:hover,
+#updateProfileBtn:hover,
+#changePasswordBtn:hover{
+
+
+background:var(--gold);
+
+color:var(--black);
+
+
+}
+
+
+
+
+
+
+/* =====================
+   DANGER BUTTON
+===================== */
+
+
+.delete-btn{
+
+
+background:#dc2626;
+
+color:white;
+
+padding:10px 18px;
+
+border-radius:10px;
+
+
+}
+
+
+
+.delete-btn:hover{
+
+
+background:#991b1b;
+
+
+}
+
+
+
+
+
+
+/* =====================
+   FORM AREA
+===================== */
+
+
+.form-card{
+
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+
+}
+
+
+
+.form-card h2,
+.table-card h2,
+.table-section h2{
+
+
+margin-bottom:10px;
+
+
+}
+
+
+
+label{
+
+
+font-weight:600;
+
+font-size:14px;
+
+color:var(--text-primary);
+
+
+}
+
+
+
+
+
+
+
+/* =====================
+   TABLE
+===================== */
+
+
+.table-card,
+.table-section{
+
+
+overflow:hidden;
+
+
+}
+
+
+
+.table-container{
+
+
+overflow-x:auto;
+
+
+}
+
+
+
+table{
+
+
+background:white;
+
+
+}
+
+
+
+thead{
+
+
+background:#111;
+
+
+color:white;
+
+
+}
+
+
+
+th{
+
+
+font-size:14px;
+
+letter-spacing:.3px;
+
+
+}
+
+
+
+tbody tr:hover{
+
+
+background:#faf7ed;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+   FILTER AREA
+===================== */
+
+
+.filter-grid{
+
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+
+}
+
+
+
+
+
+.filter-grid div{
+
+
+display:flex;
+
+flex-direction:column;
+
+gap:8px;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+   DASHBOARD SECTIONS
+===================== */
+
+
+.dashboard-section{
+
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:25px;
+
+
+}
+
+
+
+.quick-buttons{
+
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+
+}
+
+
+
+
+
+
+/* =====================
+   ANNOUNCEMENT
+===================== */
+
+
+.announcement-container{
+
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+
+}
+
+
+
+.announcement-card{
+
+
+background:white;
+
+padding:20px;
+
+border-radius:20px;
+
+box-shadow:var(--shadow-sm);
+
+
+}
+
+
+
+
+
+
+/* =====================
+   PROFILE
+===================== */
+
+
+.profile-section{
+
+
+display:grid;
+
+grid-template-columns:320px 1fr;
+
+gap:25px;
+
+
+}
+
+
+
+.profile-image img{
+
+
+width:120px;
+
+height:120px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+margin:auto;
+
+
+}
+
+
+
+
+
+
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+
+@media(max-width:900px){
+
+
+.dashboard-section,
+.profile-section{
+
+
+grid-template-columns:1fr;
+
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.card,
+.stats-card,
+.form-card,
+.table-card{
+
+
+padding:18px;
+
+
+}
+
+
+
+button{
+
+
+width:100%;
+
+
+}
+
+
+}
