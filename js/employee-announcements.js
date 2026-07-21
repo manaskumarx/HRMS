@@ -78,7 +78,9 @@ return;
 
 data.forEach(item=>{
 
-
+// AUTO MARK READ
+markAsRead(item.id);
+    
 container.innerHTML += `
 
 
@@ -154,7 +156,77 @@ ${new Date(item.created_at)
 }
 
 
+async function markAsRead(id){
 
+
+const {data:userData}=await supabaseClient
+.auth
+.getUser();
+
+
+if(!userData.user){
+return;
+}
+
+
+const userId=userData.user.id;
+
+
+
+// check already read
+
+const {data:exist}=await supabaseClient
+
+.from("announcement_reads")
+
+.select("id")
+
+.eq("announcement_id",id)
+
+.eq("user_id",userId)
+
+.single();
+
+
+
+if(exist){
+
+return;
+
+}
+
+
+
+
+
+// save read
+
+const {error}=await supabaseClient
+
+.from("announcement_reads")
+
+.insert({
+
+announcement_id:id,
+
+user_id:userId
+
+});
+
+
+
+
+if(error){
+
+console.log(
+"Read Error:",
+error
+);
+
+}
+
+
+}
 
 
 loadAnnouncements();
