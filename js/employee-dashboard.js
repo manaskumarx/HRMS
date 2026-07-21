@@ -137,7 +137,14 @@ if(profile){
 document.getElementById("employeeName")
 .innerText =
 profile.full_name;
+document.getElementById("employeeDepartment")
+.innerText =
+profile.department;
 
+
+document.getElementById("employeeDesignation")
+.innerText =
+profile.designation;
 
 }
 
