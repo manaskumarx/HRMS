@@ -7,20 +7,17 @@
 /* =====================
    APP LAYOUT
 ===================== */
-
-
 .app-layout,
 .admin-layout,
 .employee-layout{
-
 
 display:flex;
 
 min-height:100vh;
 
+position:relative;
 
 }
-
 
 
 
@@ -370,112 +367,177 @@ gap:25px;
 
 
 
-
-
 /* =====================
-   MOBILE RESPONSIVE
+   SIDEBAR TOGGLE SYSTEM
 ===================== */
-
-
-@media(max-width:900px){
-
-
-.sidebar{
-
-
-width:80px;
-
-padding:20px 10px;
-
-
-}
-
-
-
-.logo h2,
-.sidebar-logo h2,
-.sidebar nav a,
-.menu a{
-
-
-font-size:0;
-
-
-}
-
-
-
-.logo,
-.sidebar-logo{
-
-
-justify-content:center;
-
-
-}
-
-
-
-.main-content{
-
-
-margin-left:80px;
-
-width:calc(100% - 80px);
-
-padding:20px;
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-@media(max-width:600px){
-
-
-
-.sidebar{
-
+.menu-toggle{
 
 display:none;
 
+position:absolute;
+
+top:20px;
+
+left:20px;
+
+width:45px;
+
+height:45px;
+
+border:none;
+
+border-radius:12px;
+
+background:var(--gold);
+
+color:var(--black);
+
+font-size:24px;
+
+font-weight:800;
+
+cursor:pointer;
+
+z-index:500;
+
+align-items:center;
+
+justify-content:center;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+}
+
+.sidebar-overlay{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.5);
+
+z-index:900;
+
+}
+
+
+
+
+
+.sidebar-overlay.active{
+
+display:block;
+
+}
+
+
+
+
+
+
+
+/* TABLET + MOBILE */
+@media(max-width:992px){
+
+
+.menu-toggle{
+
+display:flex;
+
+}
+
+
+
+.sidebar{
+
+left:-280px;
+
+transition:.35s ease;
+
+z-index:1100;
+
+}
+
+
+
+.sidebar.active{
+
+left:0;
 
 }
 
 
 
 .main-content{
-
 
 margin-left:0;
 
 width:100%;
 
+padding:80px 20px 20px;
 
 }
-
-
-
-.header,
-.topbar{
-
-
-flex-direction:column;
-
-align-items:flex-start;
-
-gap:15px;
 
 
 }
 
 
+/* DESKTOP */
+
+@media(min-width:993px){
+
+
+.sidebar{
+
+
+left:0;
+
+
+}
+
+
+.main-content{
+
+
+margin-left:260px;
+
+width:calc(100% - 260px);
+
+padding: 30px;
+
+}
+
+
+}
+
+/* ==========================
+   DESKTOP NORMAL VIEW
+========================== */
+
+@media(min-width:993px){
+
+.main-content{
+
+margin-left:260px;
+
+width:calc(100% - 260px);
+
+padding:30px;
+
+}
+
+.menu-toggle{
+
+display:none;
+
+}
 
 }
