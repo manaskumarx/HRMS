@@ -538,3 +538,149 @@ width:100%;
 
 
 }
+
+/* =========================
+   NOTIFICATION SYSTEM
+========================= */
+
+.notification-wrapper{
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+
+.notification{
+
+width:46px;
+
+height:46px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:#f5f5f5;
+
+font-size:20px;
+
+cursor:pointer;
+
+position:relative;
+
+transition:all .25s ease;
+
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+
+
+.notification:hover{
+
+background:var(--gold);
+
+color:var(--black);
+
+transform:translateY(-2px) scale(1.08);
+
+box-shadow:0 10px 25px rgba(212,175,55,.35);
+
+}
+
+
+
+.notification:active{
+
+transform:scale(.95);
+
+}
+
+
+
+.notification-badge{
+
+position:absolute;
+
+top:-6px;
+
+right:-6px;
+
+min-width:20px;
+
+height:20px;
+
+padding:0 6px;
+
+background:#dc2626;
+
+color:#fff;
+
+border-radius:999px;
+
+font-size:11px;
+
+font-weight:700;
+
+display:none;
+
+align-items:center;
+
+justify-content:center;
+
+border:2px solid #fff;
+
+box-shadow:0 4px 12px rgba(0,0,0,.25);
+
+line-height:1;
+
+}
+
+
+
+.notification-badge.show{
+
+display:flex;
+
+animation:notificationPop .25s ease;
+
+}
+
+
+
+@keyframes notificationPop{
+
+0%{
+
+transform:scale(.4);
+
+opacity:0;
+
+}
+
+70%{
+
+transform:scale(1.15);
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
