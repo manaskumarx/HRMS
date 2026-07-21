@@ -100,7 +100,7 @@ greetingElement.innerHTML =
 
 
 updateGreeting();
-    
+
 const user =
 await supabaseClient.auth.getUser();
 
@@ -133,10 +133,10 @@ currentEmployee = profile;
 
 if(profile){
 
-
 document.getElementById("employeeName")
 .innerText =
 profile.full_name;
+
 document.getElementById("employeeDepartment")
 .innerText =
 profile.department;
@@ -145,6 +145,17 @@ profile.department;
 document.getElementById("employeeDesignation")
 .innerText =
 profile.designation;
+
+
+// PROFILE PHOTO
+
+if(profile.profile_image){
+
+document.getElementById("employeePhoto").src =
+profile.profile_image;
+
+}
+
 
 }
 
@@ -256,8 +267,7 @@ async()=>{
 
 const today =
 new Date()
-.toISOString()
-.split("T")[0];
+.toLocaleDateString("en-CA");
 
 const now = new Date().toISOString();
 
@@ -294,6 +304,43 @@ return;
 
 
 
+// GPS VERIFY FIRST
+
+const location =
+await verifyOfficeLocation();
+
+
+
+if(!location){
+
+return;
+
+}
+
+
+
+if(!location.allowed){
+
+
+alert(
+"❌ You are outside office area"
+);
+
+
+document.getElementById(
+"attendanceMessage"
+).innerText =
+"Location not verified";
+
+
+return;
+
+
+}
+
+
+
+
 
 const {error}=await supabaseClient
 .from("attendance")
@@ -311,9 +358,19 @@ today,
 check_in:
 now,
 
+
+checkin_latitude:
+location.latitude,
+
+
+checkin_longitude:
+location.longitude,
+
+
+location_verified:true
+
+
 });
-
-
 
 if(error){
     alert(error.message);
@@ -460,7 +517,185 @@ function formatTime(timestamp){
     });
 }
 
+// ===============================
+// GPS LOCATION CHECK
+// ===============================
 
+async function verifyOfficeLocation(){
+
+
+return new Promise(async(resolve)=>{
+
+
+const {data:office,error}=await supabaseClient
+.from("office_location")
+.select("*")
+.single();
+
+
+
+if(error || !office){
+
+alert("Office location not found");
+resolve(null);
+return;
+
+}
+
+
+
+
+navigator.geolocation.getCurrentPosition(
+
+async(position)=>{
+
+
+const userLat =
+position.coords.latitude;
+
+
+const userLng =
+position.coords.longitude;
+
+
+
+
+const distance =
+calculateDistance(
+userLat,
+userLng,
+office.latitude,
+office.longitude
+);
+
+
+
+console.log(
+"Distance:",
+distance
+);
+
+
+
+
+if(distance <= office.radius){
+
+
+resolve({
+
+allowed:true,
+
+latitude:userLat,
+
+longitude:userLng
+
+});
+
+
+}
+
+else{
+
+
+resolve({
+
+allowed:false
+
+});
+
+
+}
+
+
+
+},
+
+
+
+(error)=>{
+
+
+alert(
+"Please allow location permission"
+);
+
+
+resolve(null);
+
+
+
+}
+
+
+
+);
+
+
+
+});
+
+
+}
+
+
+
+
+
+
+
+// DISTANCE CALCULATOR
+
+function calculateDistance(
+lat1,
+lon1,
+lat2,
+lon2
+){
+
+
+const R = 6371000;
+
+
+const dLat =
+(lat2-lat1) *
+Math.PI/180;
+
+
+const dLon =
+(lon2-lon1) *
+Math.PI/180;
+
+
+
+const a =
+Math.sin(dLat/2) *
+Math.sin(dLat/2)
+
++
+
+Math.cos(lat1*Math.PI/180)
+*
+Math.cos(lat2*Math.PI/180)
+*
+Math.sin(dLon/2)
+*
+Math.sin(dLon/2);
+
+
+
+const c =
+2 *
+Math.atan2(
+Math.sqrt(a),
+Math.sqrt(1-a)
+);
+
+
+
+return R*c;
+
+
+}
 
 
 
