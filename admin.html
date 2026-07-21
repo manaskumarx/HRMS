@@ -140,13 +140,19 @@ Modern Teams HRMS
 
 <div class="admin-info">
 
+<div class="notification-wrapper">
 
-<div class="notification">
+<div class="notification" onclick="openNotifications()">
 
-🔔
+    🔔
+
+    <span id="notificationCount" class="notification-badge">
+        0
+    </span>
 
 </div>
 
+</div>
 
 <div class="avatar">
 
@@ -420,7 +426,7 @@ View Reports
 <script src="js/admin-dashboard.js"></script>
 
 <script src="js/sidebar.js"></script>
-
+<script src="js/notification.js"></script>
 
 <script>
 
