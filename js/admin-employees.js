@@ -164,13 +164,13 @@ ${emp.department || "-"}
 
 
 <td>
-${emp.phone || "-"}
+${emp.designation || "-"}
 </td>
 
 
 
 <td>
-${emp.role || "-"}
+${emp.phone || "-"}
 </td>
 
 
