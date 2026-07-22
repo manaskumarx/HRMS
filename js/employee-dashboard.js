@@ -264,10 +264,13 @@ document
 "click",
 async()=>{
 
-
 const today =
-new Date()
-.toLocaleDateString("en-CA");
+new Date().toLocaleDateString(
+"en-CA",
+{
+timeZone:"Asia/Kolkata"
+}
+);
 
 const now = new Date().toISOString();
 
@@ -407,11 +410,13 @@ document
 "click",
 async()=>{
 
-
 const today =
-new Date()
-.toISOString()
-.split("T")[0];
+new Date().toLocaleDateString(
+"en-CA",
+{
+timeZone:"Asia/Kolkata"
+}
+);
 
 const now = new Date().toISOString();
 
@@ -520,24 +525,22 @@ function formatTime(timestamp){
 // ===============================
 // GPS LOCATION CHECK
 // ===============================
-
 async function verifyOfficeLocation(){
 
 
 return new Promise(async(resolve)=>{
 
 
-const {data:office,error}=await supabaseClient
-.from("office_location")
-.select("*")
-.single();
+// GPS AVAILABLE CHECK
 
+if(!navigator.geolocation){
 
+alert(
+"GPS is not supported on this device"
+);
 
-if(error || !office){
-
-alert("Office location not found");
 resolve(null);
+
 return;
 
 }
@@ -545,13 +548,53 @@ return;
 
 
 
+// GET OFFICE LOCATION
+
+
+const {data:office,error}=
+
+await supabaseClient
+
+.from("office_location")
+
+.select("*")
+
+.single();
+
+
+
+
+
+if(error || !office){
+
+
+alert(
+"Office location not found"
+);
+
+
+resolve(null);
+
+return;
+
+}
+
+
+
+
+
+
 navigator.geolocation.getCurrentPosition(
 
-async(position)=>{
+
+
+(position)=>{
+
 
 
 const userLat =
 position.coords.latitude;
+
 
 
 const userLng =
@@ -560,25 +603,38 @@ position.coords.longitude;
 
 
 
+
 const distance =
+
 calculateDistance(
+
 userLat,
+
 userLng,
+
 office.latitude,
+
 office.longitude
+
 );
+
+
 
 
 
 console.log(
-"Distance:",
-distance
+"Distance From Office:",
+distance,
+"meters"
 );
+
+
 
 
 
 
 if(distance <= office.radius){
+
 
 
 resolve({
@@ -589,7 +645,9 @@ latitude:userLat,
 
 longitude:userLng
 
+
 });
+
 
 
 }
@@ -600,6 +658,7 @@ else{
 resolve({
 
 allowed:false
+
 
 });
 
@@ -615,13 +674,34 @@ allowed:false
 (error)=>{
 
 
-alert(
-"Please allow location permission"
+console.log(
+"GPS ERROR",
+error
 );
+
+
+
+alert(
+"Please enable GPS permission"
+);
+
 
 
 resolve(null);
 
+
+
+},
+
+
+
+{
+
+enableHighAccuracy:true,
+
+timeout:15000,
+
+maximumAge:0
 
 
 }
@@ -636,9 +716,6 @@ resolve(null);
 
 
 }
-
-
-
 
 
 
