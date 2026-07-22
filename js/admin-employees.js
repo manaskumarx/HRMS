@@ -7,25 +7,23 @@
 console.log("Admin Employee JS Loaded");
 
 
-
 let allEmployees = [];
+let allAdmins = [];
 
+let deleteId = null;
 
 
 
 
 // ================================
-// LOAD EMPLOYEES
+// LOAD USERS
 // ================================
 
 
-async function loadEmployees(){
+async function loadUsers(){
 
 
-
-const {data,error}=
-
-await supabaseClient
+const {data,error}=await supabaseClient
 .from("profiles")
 .select("*")
 .order(
@@ -37,13 +35,9 @@ ascending:false
 
 
 
-
 if(error){
 
-console.log(
-"Employee Load Error:",
-error
-);
+console.log(error);
 
 return;
 
@@ -52,21 +46,27 @@ return;
 
 
 
-console.log(
-"Employees Loaded:",
-data
+allEmployees = data.filter(
+user=>user.role==="employee"
 );
 
 
 
-allEmployees=data;
+allAdmins = data.filter(
+user=>user.role==="admin"
+);
 
 
-displayEmployees(data);
+
+displayEmployees(allEmployees);
+
+displayAdmins(allAdmins);
 
 
 
 }
+
+
 
 
 
@@ -79,26 +79,16 @@ displayEmployees(data);
 // ================================
 
 
-function displayEmployees(employees){
-
+function displayEmployees(data){
 
 
 const table =
-document.getElementById(
-"employeeTable"
-);
+document.getElementById("employeeTable");
 
 
 
-if(!table){
-
-console.log(
-"employeeTable not found"
-);
-
+if(!table)
 return;
-
-}
 
 
 
@@ -106,9 +96,7 @@ table.innerHTML="";
 
 
 
-
-
-if(!employees || employees.length===0){
+if(data.length===0){
 
 
 table.innerHTML=`
@@ -116,17 +104,15 @@ table.innerHTML=`
 <tr>
 
 <td colspan="6">
-
 No Employees Found
-
 </td>
 
 </tr>
 
 `;
 
-return;
 
+return;
 
 }
 
@@ -134,9 +120,7 @@ return;
 
 
 
-
-employees.forEach(emp=>{
-
+data.forEach(emp=>{
 
 
 table.innerHTML += `
@@ -144,11 +128,9 @@ table.innerHTML += `
 
 <tr>
 
-
 <td>
 ${emp.full_name || "-"}
 </td>
-
 
 
 <td>
@@ -156,17 +138,14 @@ ${emp.email || "-"}
 </td>
 
 
-
 <td>
 ${emp.department || "-"}
 </td>
 
 
-
 <td>
 ${emp.designation || "-"}
 </td>
-
 
 
 <td>
@@ -177,12 +156,9 @@ ${emp.phone || "-"}
 
 <td>
 
-
-<button
-
+<button 
 class="delete-btn"
-
-onclick="deleteEmployee('${emp.id}')">
+onclick="openDelete('${emp.id}')">
 
 Delete
 
@@ -198,7 +174,6 @@ Delete
 `;
 
 
-
 });
 
 
@@ -213,238 +188,152 @@ Delete
 
 
 
-
-
 // ================================
-// ADD EMPLOYEE
+// DISPLAY ADMINS
 // ================================
 
 
-
-const addBtn =
-document.getElementById(
-"addEmployeeBtn"
-);
+function displayAdmins(data){
 
 
-
-
-if(addBtn){
+const table =
+document.getElementById("adminTable");
 
 
 
-addBtn.addEventListener(
+if(!table)
+return;
+
+
+
+table.innerHTML="";
+
+
+
+if(data.length===0){
+
+
+table.innerHTML=`
+
+<tr>
+
+<td colspan="7">
+No Admin Found
+</td>
+
+</tr>
+
+`;
+
+return;
+
+
+}
+
+
+
+
+data.forEach(admin=>{
+
+
+table.innerHTML += `
+
+
+<tr>
+
+
+<td>
+${admin.full_name || "-"}
+</td>
+
+
+<td>
+${admin.email || "-"}
+</td>
+
+
+
+<td>
+${admin.department || "-"}
+</td>
+
+
+
+<td>
+${admin.designation || "-"}
+</td>
+
+
+<td>
+${admin.phone || "-"}
+</td>
+
+</tr>
+
+
+`;
+
+
+});
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================================
+// CREATE EMPLOYEE
+// ================================
+
+
+document
+.getElementById("addEmployeeBtn")
+?.addEventListener(
 "click",
 async()=>{
 
 
-
-console.log(
-"ADD BUTTON CLICKED"
-);
-
-
-
-
-
-const employeeData={
-
+const userData={
 
 
 full_name:
-document.getElementById(
-"fullName"
-).value.trim(),
-
-
+employeeName.value.trim(),
 
 
 email:
-document.getElementById(
-"email"
-).value.trim(),
-
-
-
+employeeEmail.value.trim(),
 
 
 password:
-document.getElementById(
-"password"
-).value.trim(),
-
-
-
+employeePassword.value.trim(),
 
 
 phone:
-document.getElementById(
-"phone"
-).value.trim(),
-
-
-
+employeePhone.value.trim(),
 
 
 department:
-document.getElementById(
-"department"
-).value.trim(),
-
-
-
+employeeDepartment.value.trim(),
 
 
 designation:
-document.getElementById(
-"designation"
-).value.trim(),
+employeeDesignation.value.trim(),
 
 
-
-
-
-role:
-document.getElementById(
-"role"
-).value
-
+role:"employee"
 
 
 };
 
 
 
-
-
-
-console.log(
-"Employee Data:",
-employeeData
-);
-
-
-
-
-
-
-
-if(
-!employeeData.full_name ||
-!employeeData.email ||
-!employeeData.password
-){
-
-
-alert(
-"Name Email Password required"
-);
-
-
-return;
-
-
-}
-
-
-
-
-
-
-
-
-
-const {data,error}=
-
-await supabaseClient.functions.invoke(
-
-"create-employee",
-
-{
-
-body:employeeData
-
-}
-
-);
-
-
-
-
-
-
-
-console.log(
-"FUNCTION DATA:",
-data
-);
-
-
-
-console.log(
-"FUNCTION ERROR:",
-error
-);
-
-
-
-
-
-
-
-
-
-if(error){
-
-
-
-alert(
-"❌ "+error.message
-);
-
-
-return;
-
-
-
-}
-
-
-
-
-
-alert("✅ Employee Created Successfully");
-
-document.getElementById(
-"employeeMessage"
-).innerText =
-"Employee Created Successfully";
-
-
-await loadEmployees();
-
-
-
-
-
-
-// clear form
-
-
-document
-.querySelectorAll(
-"input"
-)
-.forEach(input=>{
-
-
-if(
-input.type !== "button"
-){
-
-input.value="";
-
-}
+createUser(userData);
 
 
 });
@@ -456,30 +345,59 @@ input.value="";
 
 
 
-await loadEmployees();
 
 
 
+// ================================
+// CREATE ADMIN
+// ================================
 
 
-}
+document
+.getElementById("addAdminBtn")
+?.addEventListener(
+"click",
+async()=>{
 
 
-);
+const userData={
+
+
+full_name:
+adminName.value.trim(),
+
+
+email:
+adminEmail.value.trim(),
+
+
+password:
+adminPassword.value.trim(),
+
+
+phone:
+adminPhone.value.trim(),
+
+
+department:
+adminDepartment.value.trim(),
+
+
+designation:
+adminDesignation.value.trim(),
+
+
+};
 
 
 
-}
-
-else{
+createUser(userData);
 
 
-console.log(
-"Add Employee Button Not Found"
-);
+
+});
 
 
-}
 
 
 
@@ -490,37 +408,44 @@ console.log(
 
 
 // ================================
-// DELETE EMPLOYEE
+// CREATE USER FUNCTION
 // ================================
 
 
-
-async function deleteEmployee(id){
-
+async function createUser(userData){
 
 
-const confirmDelete =
-confirm(
-"Delete this employee?"
+
+if(
+!userData.full_name ||
+!userData.email ||
+!userData.password
+){
+
+
+alert(
+"Name Email Password Required"
 );
 
 
-
-if(!confirmDelete)
 return;
 
 
+}
 
 
 
-const {error}=
 
-await supabaseClient
-.from("profiles")
-.delete()
-.eq(
-"id",
-id
+const {error}=await supabaseClient.functions.invoke(
+
+"create-employee",
+
+{
+
+body:userData
+
+}
+
 );
 
 
@@ -530,10 +455,115 @@ id
 if(error){
 
 
+alert(error.message);
+
+return;
+
+
+}
+
+
+
 alert(
-error.message
+`${userData.role} Created Successfully`
 );
 
+
+
+clearForm();
+
+
+
+loadUsers();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// ================================
+// DELETE POPUP
+// ================================
+
+
+function openDelete(id){
+
+
+deleteId=id;
+
+
+
+document
+.getElementById("deleteModal")
+.style.display="flex";
+
+
+
+}
+
+
+
+
+
+document
+.getElementById("cancelDelete")
+?.addEventListener(
+"click",
+()=>{
+
+
+document
+.getElementById("deleteModal")
+.style.display="none";
+
+
+deleteId=null;
+
+
+});
+
+
+
+
+
+
+
+document
+.getElementById("confirmDelete")
+?.addEventListener(
+"click",
+async()=>{
+
+
+
+if(!deleteId)
+return;
+
+
+
+const {error}=await supabaseClient
+.from("profiles")
+.delete()
+.eq(
+"id",
+deleteId
+);
+
+
+
+if(error){
+
+
+alert(error.message);
 
 return;
 
@@ -543,18 +573,27 @@ return;
 
 
 
-
 alert(
-"Employee Deleted"
+"User Deleted Successfully"
 );
 
 
 
-loadEmployees();
+document
+.getElementById("deleteModal")
+.style.display="none";
 
 
 
-}
+deleteId=null;
+
+
+
+loadUsers();
+
+
+
+});
 
 
 
@@ -569,20 +608,9 @@ loadEmployees();
 // ================================
 
 
-
-const search =
-document.getElementById(
-"searchEmployee"
-);
-
-
-
-
-if(search){
-
-
-
-search.addEventListener(
+document
+.getElementById("searchEmployee")
+?.addEventListener(
 "input",
 (e)=>{
 
@@ -594,34 +622,71 @@ e.target.value.toLowerCase();
 
 
 
-
-const filtered =
+const employeeFilter =
 allEmployees.filter(emp=>
 
-
-
-(emp.full_name || "")
+(emp.full_name||"")
 .toLowerCase()
 .includes(value)
-
-
 
 ||
 
-
-
-(emp.email || "")
+(emp.email||"")
 .toLowerCase()
 .includes(value)
-
-
 
 );
 
 
 
-displayEmployees(filtered);
+const adminFilter =
+allAdmins.filter(admin=>
 
+(admin.full_name||"")
+.toLowerCase()
+.includes(value)
+
+||
+
+(admin.email||"")
+.toLowerCase()
+.includes(value)
+
+);
+
+
+
+displayEmployees(employeeFilter);
+
+displayAdmins(adminFilter);
+
+
+
+});
+
+
+
+
+
+
+
+
+
+// ================================
+// CLEAR FORMS
+// ================================
+
+
+function clearForm(){
+
+
+
+document
+.querySelectorAll(".form-card input")
+.forEach(input=>{
+
+
+input.value="";
 
 
 });
@@ -636,10 +701,7 @@ displayEmployees(filtered);
 
 
 
-
-// ================================
 // START
-// ================================
 
 
-loadEmployees();
+loadUsers();
