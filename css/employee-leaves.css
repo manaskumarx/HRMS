@@ -293,3 +293,41 @@ table{
 }
 
 }
+
+/* =========================================
+   TABLE SCROLL
+========================================= */
+
+.table-wrapper{
+
+    max-height:420px;
+    overflow-y:auto;
+
+}
+
+.table-wrapper::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.table-wrapper::-webkit-scrollbar-thumb{
+
+    background:#c9c9c9;
+    border-radius:20px;
+
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover{
+
+    background:var(--gold);
+
+}
+
+thead th{
+
+    position:sticky;
+    top:0;
+    z-index:10;
+
+}
