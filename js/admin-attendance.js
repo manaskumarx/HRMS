@@ -2,21 +2,21 @@
 // ADMIN ATTENDANCE JS
 // ===============================
 
-
 function formatWorkingHours(hours){
 
-    if(!hours){
+    if(hours == null){
         return "-";
     }
 
-    let h = Math.floor(hours);
+    const totalMinutes = Math.round(hours * 60);
 
-    let m = Math.round((hours-h)*60);
+    const h = Math.floor(totalMinutes / 60);
 
-    return `${h} Hours ${m} Minutes`;
+    const m = totalMinutes % 60;
+
+    return `${h}h ${m}m`;
 
 }
-
 
 
 
@@ -40,6 +40,42 @@ function formatTime(time){
 }
 
 
+
+function formatBreak(minutes){
+
+    if(minutes == null || minutes === 0){
+        return "0m";
+    }
+
+    const h = Math.floor(minutes / 60);
+    const m = minutes % 60;
+
+    if(h > 0){
+        return `${h}h ${m}m`;
+    }
+
+    return `${m}m`;
+
+}
+
+function getStatusClass(status){
+
+    switch(status){
+
+        case "Present":
+            return "status-present";
+
+        case "Absent":
+            return "status-absent";
+
+        case "Late":
+            return "status-late";
+
+        default:
+            return "status-present";
+    }
+
+}
 
 
 
@@ -261,7 +297,14 @@ ${att.profiles?.full_name || "Unknown"}
 
 <td>
 
-${att.attendance_date}
+${new Date(att.attendance_date).toLocaleDateString(
+"en-IN",
+{
+day:"2-digit",
+month:"short",
+year:"numeric"
+}
+)}
 
 </td>
 
@@ -281,23 +324,19 @@ ${formatTime(att.check_out)}
 
 </td>
 
-
-
 <td>
-
 ${formatWorkingHours(att.working_hours)}
-
 </td>
-
-
 
 <td>
-
-${att.status || "Present"}
-
+${formatBreak(att.total_break_minutes)}
 </td>
 
-
+<td>
+<span class="${getStatusClass(att.status)}">
+${att.status || "Present"}
+</span>
+</td>
 
 </tr>
 
@@ -412,8 +451,6 @@ loadAttendance();
 
 
 }
-
-
 
 loadAttendance();
 
