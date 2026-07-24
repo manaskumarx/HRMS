@@ -1112,3 +1112,27 @@ min-height:300px;
 height:100%;
 
 }
+
+
+
+@media(max-width:900px){
+
+.dashboard-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.attendance-card{
+
+    order:1;
+
+}
+
+.break-card{
+
+    order:2;
+
+}
+
+}
